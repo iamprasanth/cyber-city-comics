@@ -5,12 +5,9 @@ const fetch = require('node-fetch');
 // Get latest Comic
 exports.getLatest = async (req, res) => {
     try {
-        const response = await fetch('https://xkcd.com/info.0.json');
-        const responseData = await response.json();
-        const viewCount = await incrementViewCount(responseData.num);
-        responseData['view_count'] = viewCount;
+        const comicData = await getComic('');
 
-        return responseController.succesResponse(res, responseData);
+        return responseController.succesResponse(res, comicData);
     } catch (err) {
         responseController.errorResponse(res, 500, err.message);
     }
@@ -19,16 +16,39 @@ exports.getLatest = async (req, res) => {
 // Get comic by id
 exports.getById = async (req, res) => {
     try {
-        const response = await fetch('https://xkcd.com/' + req.params.comicId + '/info.0.json');
-        const responseData = await response.json();
-        const viewCount = await incrementViewCount(responseData.num);
-        responseData['view_count'] = viewCount;
+        if (req.params.comicId == 'random') {
+            const currentComicData = await getComic('');
+            const randomComicId = Math.floor(
+                Math.random() * (currentComicData.num - 1 + 1) + 1
+            );
+            const randomComicData = await getComic(randomComicId);
 
-        return responseController.succesResponse(res, responseData);
+            return responseController.succesResponse(res, randomComicData);
+        } else {
+            const comicData = await getComic(req.params.comicId);
+
+            return responseController.succesResponse(res, comicData);
+        }
     } catch (err) {
         responseController.errorResponse(res, 500, err.message);
     }
 };
+
+// Retreives a specific comic
+const getComic = (comicId) => {
+    return new Promise(async (resolve, reject) => {
+        try {
+            const response = await fetch('https://xkcd.com/' + comicId + '/info.0.json');
+            const responseData = await response.json();
+            const viewCount = await incrementViewCount(responseData.num);
+            responseData['view_count'] = viewCount;
+
+            return resolve(responseData)
+        } catch (error) {
+            return reject(error);
+        }
+    })
+}
 
 // Function to increment view count of a specific Comic
 const incrementViewCount = (comicId) => {
