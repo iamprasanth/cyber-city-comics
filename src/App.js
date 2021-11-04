@@ -1,6 +1,7 @@
-import Home from './pages/Home';
 import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
-
+import Home from './pages/Home';
+import NotFound from './pages/NotFound';
+import Layout from './components/Layout';
 
 export const App = () => {
 
@@ -8,7 +9,10 @@ export const App = () => {
     <>
       <BrowserRouter>
         <Routes>
-          <Route exact path="/" element={<Home />} />
+          <Layout>
+            <Route exact path="/" element={<Home />} />
+            <Route path="/*" element={<NotFound />} />
+          </Layout>
         </Routes>
       </BrowserRouter>
     </>
