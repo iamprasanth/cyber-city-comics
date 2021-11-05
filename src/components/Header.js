@@ -1,10 +1,14 @@
-const Header = (props) => {
+export default function Footer() {
     return (
         <>
-            <div className="header">
-            </div>
+            <header>
+                <nav className="site-nav">
+                    <a href="/">Home</a>
+                    <form action="">
+                        <input type="search" placeholder="Enter page to search" className="header-search" />
+                    </form>
+                </nav>
+            </header>
         </>
     )
 };
-
-export default Header;

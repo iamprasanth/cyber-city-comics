@@ -1,14 +1,14 @@
 import Header from './Header';
+import Footer from './Footer';
 
-const Layout = (props) => {
+export default function Layout(props) {
     return (
         <>
             <Header />
-            <div className="main_body">
+            <div className="content">
                 {props.children}
             </div>
+            <Footer />
         </>
     )
 };
-
-export default Layout;

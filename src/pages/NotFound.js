@@ -1,4 +1,4 @@
-export default function NotFound({ history, props }) {
+export default function NotFound() {
     return (
         <>
             <p>Not found</p>

@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
+import { BrowserRouter as Router, Switch, Route, Redirect, useLocation } from "react-router-dom";
 import Home from './pages/Home';
 import NotFound from './pages/NotFound';
 import Layout from './components/Layout';
@@ -7,16 +7,15 @@ export const App = () => {
 
   return (
     <>
-      <BrowserRouter>
-        <Routes>
+      < Router >
+        <Switch>
           <Layout>
-            <Route exact path="/" element={<Home />} />
-            <Route path="/*" element={<NotFound />} />
+            <Route exact path="/:comicId?" component={Home} />
           </Layout>
-        </Routes>
-      </BrowserRouter>
+        </Switch >
+      </ Router>
     </>
   )
 }
 
-export default App
+export default App;
