@@ -25,7 +25,6 @@ export default function Home({ history, props }) {
             const { data } = await axios.get(
                 api.getComic + comicId
             );
-            // console.log(data)
             if (comicId == '') {// Requested latest comic
                 // Save latest comic id
                 setLatestComicId(data.num)
@@ -47,7 +46,12 @@ export default function Home({ history, props }) {
     }
 
     const loadRandomComic = () => {
-        history.push('/random')
+        if (params.comicId == 'random') {
+            // Force load random comic if a random comic is currently shown
+            loadComic('random')
+        } else {
+            history.push('/random')
+        }
     }
 
     return (
@@ -83,7 +87,7 @@ export default function Home({ history, props }) {
                         <div className="comic-details">
                             <div>
                                 <h3>Publish Date</h3>
-                                <p>{comic.day + '/' + comic.month + '/' + comic.year}</p>
+                                <p>{comic.comic_date}</p>
                             </div>
                             <div>
                                 <h3>Page Number</h3>
