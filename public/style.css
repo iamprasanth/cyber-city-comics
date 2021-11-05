@@ -62,13 +62,29 @@
     font-size: 14px;
     font-weight: normal;
     padding: 10px;
-    width: 175px;
+    width: 226px;
   }
   
   .header-search:focus {
     outline: none;
     border-color: #3d56b2;
   }
+
+
+  /* Header
+  input[type="text"] {
+    width: 200px;
+    height: 20px;
+    padding-right: 50px;
+} */
+
+.header-search-btn {
+    margin-left: -50px;
+    height: 39px;
+    width: 50px;
+    border: 0;
+    -webkit-appearance: none;
+}
   
   .content {
     padding: 0 15px 30px;
@@ -164,6 +180,9 @@
     order: 3;
   }
   
+  .text-center {
+    text-align:center;
+  }
   .comic-details {
     display: flex;
     align-items: center;
@@ -208,6 +227,7 @@
     line-height: normal;
     font-weight: 700;
   }
+
   
   @media screen and (min-width: 576px) {
     .comic-details {
@@ -226,7 +246,7 @@
     }
   
     .header-search {
-      width: 200px;
+      width: 226px;
       font-size: inherit;
       padding: 10px 15px;
     }
