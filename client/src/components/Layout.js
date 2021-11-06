@@ -4,7 +4,7 @@ import Footer from './Footer';
 export default function Layout(props) {
     return (
         <>
-            <div class="main-wrapper">
+            <div className="main-wrapper">
 
                 <Header />
                 <div className="content">

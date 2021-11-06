@@ -12,7 +12,7 @@ export default function Footer() {
         <>
             <header>
                 <nav className="site-nav">
-                    <a href="/">Home</a>
+                    <a onClick={() => history.push('/')}>Home</a>
                     <form>
                         <input
                             type="search"

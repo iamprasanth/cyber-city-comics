@@ -204,6 +204,9 @@ header {
   padding: 5px 15px;
 }
 
+header a {
+  cursor: pointer;
+}
 .header-search {
   appearance: none;
   background-color: #eff2ff;
