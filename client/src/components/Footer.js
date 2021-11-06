@@ -1,7 +1,7 @@
 export default function Footer() {
     return (
         <>
-            <div >
+            <div class="footer">
                 <hr />
                 <p >
                     Copyright © {new Date().getFullYear()} CompanyName. All rights reserved.
