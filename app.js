@@ -4,6 +4,7 @@ const cors = require('cors');
 require('dotenv').config();
 const connectDB = require('./config/database');
 const { corsOptions } = require('./config/cors');
+const path = require('path');
 
 // Connect DB
 connectDB(process.env.MONGO_URL);
@@ -30,19 +31,17 @@ app.use(cors(corsOptions));
 const comicsRouter = require('./routes/comics')
 app.use('/comics', comicsRouter)
 
-if (process.env.NODE_ENV !== 'production') {
-    // app.use(express.static('client/build')); 
+// Specify React build path for server side rendering
+if (process.env.NODE_ENV === 'production') {
+    app.use(express.static(path.join(__dirname, "client", "build")));
 
-
-    app.use(express.static(path.resolve(__dirname, "./client/build")));
+    app.get("/*", function (req, res) {
+        res.sendFile(path.join(__dirname, "./client/build/index.html"));
+    });
 }
 
-app.use("/*", (req, res) => {
-    res.send(path.join(__dirname, "client", "build", "index.html"));
-});
-
 // Serving
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT || 7000;
 app.listen(PORT, () => {
     console.log('server is running')
 })
