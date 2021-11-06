@@ -1,7 +1,7 @@
-import { BrowserRouter as Router, Switch, Route, Redirect, useLocation } from "react-router-dom";
-import Home from './pages/Home';
-import NotFound from './pages/NotFound';
-import Layout from './components/Layout';
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import Home from './pages/home/Home';
+import Layout from './components/Layout/Layout';
+import './App.css';
 
 export const App = () => {
 

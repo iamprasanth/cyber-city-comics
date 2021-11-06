@@ -1,4 +1,5 @@
 import { useHistory, useLocation } from 'react-router-dom';
+import './Header.css';
 
 export default function Footer() {
     const history = useHistory();
@@ -12,7 +13,7 @@ export default function Footer() {
         <>
             <header>
                 <nav className="site-nav">
-                    <a href="/">Home</a>
+                    <a onClick={() => history.push('/')}>Home</a>
                     <form>
                         <input
                             type="search"
