@@ -1,7 +1,8 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
-import api from "../config/api";
+import api from "../../config/api";
 import { useParams } from 'react-router-dom';
+import './Home.css';
 
 export default function Home({ history, props }) {
 

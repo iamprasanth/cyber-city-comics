@@ -1,0 +1,49 @@
+header {
+    padding: 5px 15px;
+  }
+  
+  header a {
+    cursor: pointer;
+  }
+  .header-search {
+    appearance: none;
+    background-color: #eff2ff;
+    border-radius: 5px;
+    border: 1px solid rgba(9, 30, 66, 0.2);
+    color: #14279e;
+    font-size: 13px;
+    font-weight: normal;
+    padding: 10px 45px 10px 10px;
+    width: 170px;
+  }
+  
+  .header-search:focus {
+    outline: none;
+    border-color: #3d56b2;
+  }
+  
+  .header-search-btn {
+    margin-left: -40px;
+    height: 37px;
+    width: 40px;
+    padding: 5px;
+    border: 0;
+    border-radius: 0 5px 5px 0;
+    -webkit-appearance: none;
+    line-height: 100%;
+    vertical-align: top;
+    font-size: 15px;
+  }
+
+  @media screen and (min-width: 576px) {
+    /* For phone landscape */
+   .header-search {
+     font-size: 14px;
+     width: 220px;
+   }
+ 
+   .header-search-btn {
+     height: 38px;
+   }
+   
+ }  

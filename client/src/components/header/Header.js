@@ -1,4 +1,5 @@
 import { useHistory, useLocation } from 'react-router-dom';
+import './Header.css';
 
 export default function Footer() {
     const history = useHistory();
