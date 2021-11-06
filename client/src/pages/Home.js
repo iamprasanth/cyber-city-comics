@@ -6,7 +6,6 @@ import { useParams } from 'react-router-dom';
 export default function Home({ history, props }) {
 
     const [comic, setComic] = useState([]);
-    const [latestComicId, setLatestComicId] = useState(0);
     const params = useParams()
 
     useEffect(async () => {
@@ -25,10 +24,6 @@ export default function Home({ history, props }) {
             const { data } = await axios.get(
                 api.getComic + comicId
             );
-            if (comicId == '') {// Requested latest comic
-                // Save latest comic id
-                setLatestComicId(data.num)
-            }
             setComic(data);
         } catch (error) {
             setComic(null)
@@ -63,12 +58,14 @@ export default function Home({ history, props }) {
                 // Valid Comic
                 comic &&
                 <>
-                    <h1 className="comic-title">{comic.title}</h1>
                     <div className="comic-wrap">
                         <div className="comic-content">
+                            <h1 class="comic-title">{comic.title}</h1>
                             <span className="comic-nav prev" onClick={loadPreviousComic}>
-                                <svg xmlns="http://www.w3.org/2000/svg" width={16} height={16} fill="currentColor" viewBox="0 0 16 16">
-                                    <path fillRule="evenodd" d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z" />
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                    viewBox="0 0 16 16">
+                                    <path fill-rule="evenodd"
+                                        d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z" />
                                 </svg>
                             </span>
                             <div className="comic-img">
@@ -76,10 +73,12 @@ export default function Home({ history, props }) {
                             </div>
                             {
                                 // Dont Display Next button for latest comic
-                                latestComicId != comic.num &&
+                                comic.latest_comic_id != comic.num &&
                                 <span className="comic-nav next" onClick={loadNextComic}>
-                                    <svg xmlns="http://www.w3.org/2000/svg" width={16} height={16} fill="currentColor" viewBox="0 0 16 16">
-                                        <path fillRule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z" />
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                        viewBox="0 0 16 16">
+                                        <path fill-rule="evenodd"
+                                            d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z" />
                                     </svg>
                                 </span>
                             }
