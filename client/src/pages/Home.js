@@ -59,7 +59,7 @@ export default function Home({ history, props }) {
                 comic &&
                 <>
                     <div className="comic-wrap">
-                        <div className="comic-content">
+                        <div className="comic-content align-left">
                             <h1 class="comic-title">{comic.title}</h1>
                             <span className="comic-nav prev" onClick={loadPreviousComic}>
                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
@@ -104,9 +104,9 @@ export default function Home({ history, props }) {
                 // Invalid Comic Searched
                 !comic &&
                 <>
-                    <h1 className="comic-title">No comic found</h1>
                     <div className="comic-wrap">
                         <div className="comic-content">
+                            <h1 className="comic-title">No comic found</h1>
                             <div className="comic-img">
                                 <img src={process.env.REACT_APP_PUBLIC_FOLDER + 'images/not-found.jpeg'} />
                             </div>

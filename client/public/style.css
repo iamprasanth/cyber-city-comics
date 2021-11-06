@@ -25,9 +25,6 @@ body {
   white-space: normal;
 }
 
-header {
-  padding: 5px 15px;
-}
 
 .site-nav {
   display: flex;
@@ -53,31 +50,6 @@ header {
 .site-nav a:hover {
   color: #3d56b2;
   background-color: #dbe6fd;
-}
-
-.header-search {
-  appearance: none;
-  background-color: #eff2ff;
-  border-radius: 5px;
-  border: 1px solid rgba(9, 30, 66, 0.2);
-  color: #14279e;
-  font-size: 14px;
-  font-weight: normal;
-  padding: 10px;
-  width: 225px;
-}
-
-.header-search:focus {
-  outline: none;
-  border-color: #3d56b2;
-}
-
-.header-search-btn {
-  margin-left: -50px;
-  height: 39px;
-  width: 50px;
-  border: 0;
-  -webkit-appearance: none;
 }
 
 .content {
@@ -123,7 +95,7 @@ header {
 }
 
 .comic-wrap {
-  width: 880px;
+  width: 600px;
   max-width: 100%;
   margin: 0 auto;
 }
@@ -221,6 +193,47 @@ header {
   font-weight: 700;
 }
 
+/* Header */
+header {
+  padding: 5px 15px;
+}
+
+.header-search {
+  appearance: none;
+  background-color: #eff2ff;
+  border-radius: 5px;
+  border: 1px solid rgba(9, 30, 66, 0.2);
+  color: #14279e;
+  font-size: 14px;
+  font-weight: normal;
+  padding: 10px;
+  width: 225px;
+}
+
+.header-search:focus {
+  outline: none;
+  border-color: #3d56b2;
+}
+
+.header-search-btn {
+  margin-left: -50px;
+  height: 39px;
+  width: 50px;
+  border: 0;
+  -webkit-appearance: none;
+}
+
+/* Footer */
+.footer {
+  margin-top: 50px;
+  text-align: center;
+  border-top: 1px solid #ddd;
+}
+
+.footer p {
+  color: rgb(92, 122, 234);
+}
+
 @media screen and (min-width: 576px) {
   .comic-details {
     flex-direction: row;
@@ -242,26 +255,25 @@ header {
     font-size: inherit;
     padding: 10px 15px;
   }
-  
-  .footer {
-    margin-top: 50px;
-    text-align: center;
-  }
 
-  .footer p {
-    color: rgb(92, 122, 234);
-  }
+
 }
 
 @media screen and (min-width: 768px) {
+  .comic-content.align-left {
+    justify-content: flex-start;
+  }
+
+  .comic-content.align-right {
+    justify-content: flex-end;
+  }
+
   .comic-title {
     width: 520px;
     max-width: calc(100% - 80px);
     order: 2;
   }
   .comic-img {
-    width: 600px;
-    max-width: 100%;
     order: 4;
   }
 
