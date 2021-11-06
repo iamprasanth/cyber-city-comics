@@ -1,11 +1,12 @@
 header {
     padding: 5px 15px;
-  }
-  
-  header a {
+}
+
+header a {
     cursor: pointer;
-  }
-  .header-search {
+}
+
+.header-search {
     appearance: none;
     background-color: #eff2ff;
     border-radius: 5px;
@@ -15,14 +16,14 @@ header {
     font-weight: normal;
     padding: 10px 45px 10px 10px;
     width: 170px;
-  }
-  
-  .header-search:focus {
+}
+
+.header-search:focus {
     outline: none;
     border-color: #3d56b2;
-  }
-  
-  .header-search-btn {
+}
+
+.header-search-btn {
     margin-left: -40px;
     height: 37px;
     width: 40px;
@@ -33,17 +34,15 @@ header {
     line-height: 100%;
     vertical-align: top;
     font-size: 15px;
-  }
+}
 
-  @media screen and (min-width: 576px) {
+@media screen and (min-width: 576px) {
     /* For phone landscape */
-   .header-search {
-     font-size: 14px;
-     width: 220px;
-   }
- 
-   .header-search-btn {
-     height: 38px;
-   }
-   
- }  
+    .header-search {
+        font-size: 14px;
+        width: 220px;
+    }
+    .header-search-btn {
+        height: 38px;
+    }
+}

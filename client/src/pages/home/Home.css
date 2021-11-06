@@ -1,5 +1,4 @@
-
-  .main-wrapper {
+.main-wrapper {
     width: 1200px;
     max-width: calc(100% - 30px);
     margin: 15px auto;
@@ -8,10 +7,9 @@
     box-shadow: rgb(0 0 0 / 9%) 0px 3px 12px;
     word-break: break-word;
     white-space: normal;
-  }
-  
-  
-  .site-nav {
+}
+
+.site-nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -19,9 +17,9 @@
     margin: 15px auto;
     border-bottom: 1px solid #ddd;
     padding-bottom: 15px;
-  }
-  
-  .site-nav a {
+}
+
+.site-nav a {
     color: #5c7aea;
     display: inline-block;
     font-weight: 700;
@@ -30,24 +28,24 @@
     text-decoration: none;
     text-transform: uppercase;
     transition: background-color 0.15s ease-in;
-  }
-  
-  .site-nav a:hover {
+}
+
+.site-nav a:hover {
     color: #3d56b2;
     background-color: #dbe6fd;
-  }
-  
-  .content {
+}
+
+.content {
     padding: 0 15px 30px;
     margin: 0 auto;
-  }
-  
-  .btn-wrap {
+}
+
+.btn-wrap {
     text-align: right;
     margin-bottom: 15px;
-  }
-  
-  .btn {
+}
+
+.btn {
     appearance: none;
     border: none;
     border-radius: 5px;
@@ -62,13 +60,13 @@
     padding: 12px 17px;
     text-align: center;
     transition: background-color 0.15s ease-in;
-  }
-  
-  .btn:hover {
+}
+
+.btn:hover {
     background-color: #3d56b2;
-  }
-  
-  .comic-title {
+}
+
+.comic-title {
     font-size: 26px;
     line-height: 1.3;
     font-weight: 700;
@@ -77,34 +75,34 @@
     margin: 0 0 15px;
     padding: 0 15px;
     order: 1;
-  }
-  
-  .comic-wrap {
+}
+
+.comic-wrap {
     width: 600px;
     max-width: 100%;
     margin: 0 auto;
-  }
-  
-  .comic-content {
+}
+
+.comic-content {
     display: flex;
     align-items: center;
     justify-content: center;
     flex-wrap: wrap;
-  }
-  
-  .comic-img {
+}
+
+.comic-img {
     order: 2;
     width: 100%;
-  }
-  
-  .comic-img img {
+}
+
+.comic-img img {
     border-radius: 5px;
     max-width: 100%;
     width: 100%;
     height: auto;
-  }
-  
-  .comic-nav {
+}
+
+.comic-nav {
     display: inline-flex;
     width: 40px;
     height: 40px;
@@ -116,24 +114,23 @@
     color: #ffffff;
     margin: 15px;
     cursor: pointer;
-    box-shadow: rgba(9, 30, 66, 0.25) 0px 4px 8px -2px,
-      rgba(9, 30, 66, 0.08) 0px 0px 0px 1px;
+    box-shadow: rgba(9, 30, 66, 0.25) 0px 4px 8px -2px, rgba(9, 30, 66, 0.08) 0px 0px 0px 1px;
     transition: background-color 0.15s ease-in;
-  }
-  
-  .comic-nav:hover {
+}
+
+.comic-nav:hover {
     background-color: #3d56b2;
-  }
-  
-  .comic-nav.prev {
+}
+
+.comic-nav.prev {
     order: 3;
-  }
-  
-  .comic-nav.next {
+}
+
+.comic-nav.next {
     order: 4;
-  }
-  
-  .comic-details {
+}
+
+.comic-details {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -143,8 +140,9 @@
     width: 640px;
     max-width: 100%;
     text-align: center;
-  }
-  .comic-details > div {
+}
+
+.comic-details>div {
     background-color: #eff2ff;
     border-radius: 5px;
     width: 255px;
@@ -152,80 +150,70 @@
     padding: 25px 10px;
     flex-shrink: 0;
     margin-bottom: 20px;
-  }
-  
-  .comic-details > div:last-child {
+}
+
+.comic-details>div:last-child {
     margin-bottom: 0;
-  }
-  
-  .comic-details > div:nth-child(2) {
+}
+
+.comic-details>div:nth-child(2) {
     border-width: 0;
     border-style: dotted;
     border-color: #3d56b2;
-  }
-  
-  .comic-details h3 {
+}
+
+.comic-details h3 {
     color: #14279b;
     margin: 0 0 5px;
     font-weight: 700;
     line-height: 1;
-  }
-  
-  .comic-details p {
+}
+
+.comic-details p {
     color: #5c7aea;
     margin: 0;
     line-height: normal;
     font-weight: 700;
-  }
-  
-  
-  @media screen and (min-width: 576px) {
-     /* For phone landscape */
+}
+
+@media screen and (min-width: 576px) {
+    /* For phone landscape */
     .comic-details {
-      flex-direction: row;
+        flex-direction: row;
     }
-  
-    .comic-details > div {
-      width: 33.33%;
-      background-color: transparent;
-      margin: 0;
-      border-radius: 0;
+    .comic-details>div {
+        width: 33.33%;
+        background-color: transparent;
+        margin: 0;
+        border-radius: 0;
     }
-  
-    .comic-details > div:nth-child(2) {
-      border-width: 0 1px 0 1px;
+    .comic-details>div:nth-child(2) {
+        border-width: 0 1px 0 1px;
     }
-  }
-  
-  @media screen and (min-width: 768px) {
-  
+}
+
+@media screen and (min-width: 768px) {
     .comic-content.align-left {
-      justify-content: flex-start;
+        justify-content: flex-start;
     }
-  
     .comic-content.align-right {
-      justify-content: flex-end;
+        justify-content: flex-end;
     }
-  
     .comic-title {
-      width: 520px;
-      max-width: calc(100% - 80px);
-      order: 2;
+        width: 520px;
+        max-width: calc(100% - 80px);
+        order: 2;
     }
     .comic-img {
-      order: 4;
+        order: 4;
     }
-  
     .comic-nav.prev {
-      order: 1;
+        order: 1;
     }
-  
     .comic-nav.next {
-      order: 3;
+        order: 3;
     }
-  
     .comic-nav {
-      margin: 0 0 10px;
+        margin: 0 0 10px;
     }
-  }
-  
+}
