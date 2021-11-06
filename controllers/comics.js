@@ -42,9 +42,10 @@ const getComic = (comicId) => {
             const response = await fetch('https://xkcd.com/' + comicId + '/info.0.json');
             const responseData = await response.json();
             const viewCount = await incrementViewCount(responseData.num);
-            const comicDate = new Date(responseData['year'], responseData['month'], responseData['day']);
+            const comicDate = new Date(responseData['year'], responseData['month'] - 1, responseData['day']);
             responseData['comic_date'] = comicDate.toLocaleString('default', { month: 'short' }) + '. ' + responseData['day'] + ', ' + responseData['year'];
             responseData['view_count'] = viewCount;
+            responseData['latest_comic_id'] = await getLatestComicId();// Used To hide next button for Latest Comic
 
             return resolve(responseData)
         } catch (error) {
@@ -81,3 +82,17 @@ const incrementViewCount = (comicId) => {
         }
     })
 }
+
+// Returns latest comic's ID
+const getLatestComicId = () => {
+    return new Promise(async (resolve, reject) => {
+        try {
+            const response = await fetch('https://xkcd.com/info.0.json');
+            const responseData = await response.json();
+
+            return resolve(responseData.num)
+        } catch (error) {
+            return reject(error);
+        }
+    })
+};
