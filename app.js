@@ -30,6 +30,10 @@ app.use(cors(corsOptions));
 const comicsRouter = require('./routes/comics')
 app.use('/comics', comicsRouter)
 
+if (process.env.NODE_ENV !== 'production') {
+    app.use(express.static('client/build'));
+}
+
 // Serving
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
