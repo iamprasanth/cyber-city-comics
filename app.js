@@ -31,17 +31,14 @@ app.use(cors(corsOptions));
 const comicsRouter = require('./routes/comics')
 app.use('/comics', comicsRouter)
 
-// if (process.env.NODE_ENV !== 'production') {
-//     // app.use(express.static('client/build')); 
+// Specify React build path for server side rendering
+if (process.env.NODE_ENV === 'production') {
+    app.use(express.static(path.join(__dirname, "client", "build")));
 
-
-//     app.use(express.static(path.resolve(__dirname, "./client/build")));
-// }
-app.use(express.static(path.join(__dirname, "client", "build")));
-
-app.use("/*", (req, res) => {
-    res.send(path.join(__dirname, "client", "build", "index.html"));
-});
+    app.get("/*", function (req, res) {
+        res.sendFile(path.join(__dirname, "./client/build/index.html"));
+    });
+}
 
 // Serving
 const PORT = process.env.PORT || 7000;
