@@ -64,12 +64,20 @@ header {
   font-size: 14px;
   font-weight: normal;
   padding: 10px;
-  width: 175px;
+  width: 225px;
 }
 
 .header-search:focus {
   outline: none;
   border-color: #3d56b2;
+}
+
+.header-search-btn {
+  margin-left: -50px;
+  height: 39px;
+  width: 50px;
+  border: 0;
+  -webkit-appearance: none;
 }
 
 .content {
@@ -230,10 +238,19 @@ header {
   }
 
   .header-search {
-    width: 200px;
+    width: 220px;
     font-size: inherit;
     padding: 10px 15px;
   }
+  .footer {
+    position: absolute;
+    left: 0;
+    bottom: 0px;
+    width: 100%;
+    background-color: red;
+    color: white;
+    text-align: center;
+ }
 }
 
 @media screen and (min-width: 768px) {
