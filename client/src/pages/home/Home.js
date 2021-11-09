@@ -62,6 +62,7 @@ export default function Home({ history, props }) {
                     <div className="comic-wrap">
                         <div className="comic-content align-left">
                             <h1 className="comic-title">{comic.title}</h1>
+
                             <span className="comic-nav prev" onClick={loadPreviousComic}>
                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                                     viewBox="0 0 16 16">
@@ -72,6 +73,7 @@ export default function Home({ history, props }) {
                             <div className="comic-img">
                                 <img src={comic.img} alt={comic.alt} />
                             </div>
+                            <pre>{comic.transcript}</pre>
                             {
                                 // Dont Display Next button for latest comic
                                 comic.latest_comic_id != comic.num &&

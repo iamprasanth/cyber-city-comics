@@ -46,6 +46,10 @@ const getComic = (comicId) => {
             responseData['comic_date'] = comicDate.toLocaleString('default', { month: 'short' }) + '. ' + responseData['day'] + ', ' + responseData['year'];
             responseData['view_count'] = viewCount;
             responseData['latest_comic_id'] = await getLatestComicId();// Used To hide next button for Latest Comic
+            responseData['transcript'] = responseData['transcript']
+                .replace(/\s?\{[^}]+\}/g, '') // Remove alt value in transcript
+                .replace(/}/g, '') // Remove curly braces
+                .replace(/[\[\]]+/g, ''); // Remove angle brackets
 
             return resolve(responseData)
         } catch (error) {
