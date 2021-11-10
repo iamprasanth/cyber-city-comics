@@ -20,6 +20,7 @@ export default function Home({ history, props }) {
         [params.comicId]// Force complonent to reload when route parameter changes
     );
 
+    // Retrieve comic details from API
     const loadComic = async (comicId) => {
         try {
             const { data } = await axios.get(
@@ -31,16 +32,19 @@ export default function Home({ history, props }) {
         }
     }
 
+    // Load previous comic using previous button
     const loadPreviousComic = () => {
         let comicId = parseInt(comic.num) - 1;
         history.push('/' + comicId)
     }
 
+    // Load next comic using next button
     const loadNextComic = () => {
         let comicId = parseInt(comic.num) + 1;
         history.push('/' + comicId)
     }
 
+    // Load random comic
     const loadRandomComic = () => {
         if (params.comicId == 'random') {
             // Force load random comic if a random comic is currently shown
@@ -87,7 +91,7 @@ export default function Home({ history, props }) {
                         </div>
                         <div className="comic-details">
                             <div>
-                                <h3>Publish Date</h3>
+                                <h3>Date Created</h3>
                                 <p>{comic.comic_date}</p>
                             </div>
                             <div>
@@ -95,7 +99,7 @@ export default function Home({ history, props }) {
                                 <p>{comic.num}</p>
                             </div>
                             <div>
-                                <h3>Browsed</h3>
+                                <h3>Views</h3>
                                 <p>{comic.view_count}</p>
                             </div>
                         </div>
