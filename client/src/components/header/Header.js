@@ -4,9 +4,24 @@ import './Header.css';
 export default function Footer() {
     const history = useHistory();
 
+    // Get value from search input and redirect to the requested comic page
     const searchComic = () => {
         let searchValue = document.getElementsByName("search")[0].value;
-        history.push('/' + searchValue)
+        if (searchValue) {
+            history.push('/' + searchValue)
+        }
+    }
+
+    // Handle keypress activities in search input
+    const keyPressHandler = (event) => {
+        if (!/[0-9]/.test(event.key)) {
+            // Prevent entering non numerical value
+            event.preventDefault();
+        }
+        if (event.key === 'Enter') {
+            // On enter key pressed
+            searchComic()
+        }
     }
 
     return (
@@ -20,11 +35,7 @@ export default function Footer() {
                             placeholder="Enter page number"
                             name="search"
                             className="header-search"
-                            onKeyPress={(event) => {
-                                if (!/[0-9]/.test(event.key)) {
-                                    event.preventDefault();
-                                }
-                            }}
+                            onKeyPress={keyPressHandler}
                         />
                         <button type="button" value="GO" className="btn header-search-btn" onClick={searchComic} >GO</button>
                     </form>
