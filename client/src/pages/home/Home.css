@@ -175,7 +175,10 @@
     line-height: normal;
     font-weight: 700;
 }
-
+.transcript-content {
+    order: 5;
+    white-space: break-spaces;
+}
 @media screen and (min-width: 576px) {
     /* For phone landscape */
     .comic-details {
