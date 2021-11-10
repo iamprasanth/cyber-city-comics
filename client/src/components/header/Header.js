@@ -36,6 +36,7 @@ export default function Footer() {
                             name="search"
                             className="header-search"
                             onKeyPress={keyPressHandler}
+                            autoComplete="off"
                         />
                         <button type="button" value="GO" className="btn header-search-btn" onClick={searchComic} >GO</button>
                     </form>
