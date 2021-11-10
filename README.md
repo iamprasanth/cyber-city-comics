@@ -18,6 +18,10 @@ A simple web application for viewing comics by Cyber City Comics, a fastest grow
 ● Each comic page has a counter that displays the amount of times this specific comic strip has been viewed on your site
 ● Search input to search comics by id (EXTRA)
 
+## Sample screen
+
+![alt text](https://github.com/iamprasanth/cyber-city-comics/blob/main/client/public/screens/screen1.png?raw=true)
+
 ## Technology stack used
 
 - [MongoDB]
@@ -46,4 +50,10 @@ npm start
 ## License
 
 This Cyber city comics app is open-sourced software licensed under the MIT license
+
+
+   [React.js]: <https://reactjs.org/>
+   [MongoDB]: <https://docs.mongodb.com/>
+   [node.js]: <http://nodejs.org>
+   [Express]: <http://expressjs.com>
 
