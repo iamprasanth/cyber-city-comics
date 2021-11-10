@@ -17,10 +17,10 @@ exports.getLatest = async (req, res) => {
 exports.getById = async (req, res) => {
     try {
         if (req.params.comicId === 'random') {
-            const currentComicData = await getComic('');
+            const latestComicId = await getLatestComicId();
             // Generate random number between 1 and maximum comic id
             const randomComicId = Math.floor(
-                Math.random() * (currentComicData.num - 1 + 1) + 1
+                Math.random() * (latestComicId - 1 + 1) + 1
             );
             const randomComicData = await getComic(randomComicId);
 
