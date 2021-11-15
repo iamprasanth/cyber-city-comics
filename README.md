@@ -1,5 +1,6 @@
 # Cyber City Comics Web App
 A simple web application developed using MERN stack for viewing comics by Cyber City Comics, a fastest growing comic book stores in downtown Toronto since 1990s.
+
 https://github.com/iamprasanth/cyber-city-comics
 
 ## Requirements Completed
